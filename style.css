@@ -1,4 +1,5 @@
-*{
+
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -10,25 +11,30 @@ html, body {
     flex-direction: column;
 }
 
-header{
+header {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     padding: 10px 20px;
-    color: black;
     border: 1px solid black;
     border-radius: 20px;
     margin: 15px 2px;
 }
 
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
 
 .logo {
     font-size: 24px;
     font-weight: bold;
     border: 2px solid black;
-    width: 100px;
+    padding: 5px;
     text-align: center;
-    
+    margin-right: 650px;
 }
 
 .navbar {
@@ -46,14 +52,14 @@ header{
     color: black;
     font-size: 16px;
     border: 1px solid black;
-}
-
-.navbar a .contact{
-    margin-left: 30px;
+    padding: 5px;
 }
 
 .icon-container {
     position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .icon {
@@ -64,13 +70,11 @@ header{
     border-radius: 5px;
 }
 
-
-
 .dropdown {
     display: none;
     flex-direction: column;
     position: absolute;
-    top: 30px; 
+    top: 30px;
     right: 0;
     padding: 10px;
     border-radius: 5px;
@@ -89,20 +93,70 @@ main {
     flex-grow: 1;
     display: flex;
     justify-content: center;
-    align-items: center; 
-}
-
-footer{
-    border: 1px solid black;
-    border-radius: 2px;
+    align-items: center;
 }
 
 footer {
-    
+    border: 1px solid black;
+    border-radius: 2px;
     color: white;
     text-align: center;
     padding: 20px;
     font-size: 16px;
-    margin-top: 10px 2px; 
-    margin-bottom: 2px;
+    margin: 10px 2px;
+}
+
+@media (max-width: 768px) {
+    .header-container {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .logo {
+        margin: 0;
+        order: 1;
+        margin-right: 180px;
+    }
+
+    .menu-icon {
+        font-size: 24px;
+        cursor: pointer;
+        border: 1px solid black;
+        padding: 5px 10px;
+        border-radius: 5px;
+        display: inline-block;
+    }
+
+    .navbar {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        left: 10px;
+        background: white;
+        border: 1px solid black;
+        padding: 10px;
+        width: 90%;
+    }
+
+    .menu-icon:hover + .navbar,
+    .navbar:hover {
+        display: flex;
+    }
+
+    .navbar a {
+        font-size: 14px;
+        padding: 10px;
+        border: none;
+    }
+
+    .icon-container {
+        order: 2;
+        position: static;
+    }
+
+    footer {
+        flex-wrap: wrap;
+    }
 }
